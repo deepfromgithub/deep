@@ -1,0 +1,35 @@
+<form>
+<div class="form-group">
+<label for="n1">Enter Name</label>
+<input type="text" class="form.control" minlength="15" ngModel id="n1" name="N" #N="ngModel" (change)="log(N)"><br>
+
+<div class="alert alert-danger" *ngIf="N.touched && !N.valid">
+<div *ngIf="N.errors.minlength">Name must be of 15 Characters</div>
+</div>
+
+<label for="s1">Enter Section</label>
+<input type="text" class="form.control" minlength="5" ngModel id="s1" name="S" #S="ngModel" (change)="log(S)"><br>
+
+<div class="alert alert-danger" *ngIf="S.touched && !S.valid">
+<div *ngIf="S.errors.minlength">Section must be of 5 Characters</div>
+</div>
+
+<label for="r1">Enter Roll Number</label>
+<input type="text" class="form.control" minlength="10" ngModel id="r1" name="R" #R="ngModel" (change)="log(R)"><br>
+
+<div class="alert alert-danger" *ngIf="R.touched && !R.valid">
+<div *ngIf="R.errors.minlength">Roll Number must be of 10 Characters</div>
+</div>
+
+<label for="r2">Enter Reg. No</label>
+<input type="text" class="form.control" minlength="8" ngModel id="r2" name="R2" #R2="ngModel" (change)="log(R2)"><br>
+
+<div class="alert alert-danger" *ngIf="R2.touched && !R2.valid">
+<div *ngIf="R2.errors.minlength">Registration Number must be of 8 Characters</div>
+</div>
+
+</div>
+
+<button class="btn btn-primary" [disabled]="!N.valid && !S.valid && !R.valid && !R2.valid">Submit</button>
+<button class="btn btn-primary" >Reset</button>
+</form>
